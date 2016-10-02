@@ -13,54 +13,47 @@
 <header class="Site-header">
     <div class="Header">
         <div class="Header-title">
-            <i class="fa fa-clock-o"></i> urlcheck.io
+            <i class="fa fa-clock-o"></i><span> urlcheck.</span><span class="Header-color">io</span>
         </div>
-        <div class="Header-action">
-            <p>signed in as <a href="#">GDownes</a> <i class="fa fa-user"></i> | <i class="fa fa-sign-out"></i> <a
-                    href="#">sign out</a></p>
-        </div>
+        <#--<div class="Header-action">-->
+            <#--<p>signed in as <a href="#">GDownes</a> <i class="fa fa-user"></i> | <i class="fa fa-sign-out"></i> <a-->
+                    <#--href="#">sign out</a></p>-->
+        <#--</div>-->
     </div>
 </header>
-<section class="Status">
+<section class="Status <#if downCount gt 0>Status-down</#if>">
     <div class="Status-content">
-        Up and running!
+        <#if downCount == 0>
+            Up and running!
+        <#else>
+            ${downCount} down
+        </#if>
     </div>
 </section>
 <main class="Site-content">
     <div class="Container">
         <section class="Checks">
-            <div class="Check">
-                <div class="Check-name">
-                    Google.com
+            <#list checks as check>
+                <div class="Check">
+                    <div class="Check-name">
+                    ${check.name}
+                    </div>
+                    <div class="Check-status">
+                        <span  class="Check-${check.status?lower_case}">${check.status}</span>
+                    </div>
                 </div>
-                <div class="Check-status">
-                    Up
-                </div>
-            </div>
-            <div class="Check">
-                <div class="Check-name">
-                    Facebook.com
-                </div>
-                <div class="Check-status">
-                    Down
-                </div>
-            </div>
+            </#list>
         </section>
     </div>
-<#--<section>-->
-<#--<div>-->
-<#--<div>Google.com</div>-->
-<#--<div>Up</div>-->
-<#--</div>-->
-<#--<div>-->
-<#--<div>Facebook.com</div>-->
-<#--<div>Up</div>-->
-<#--</div>-->
-<#--</section>-->
 </main>
 <footer class="Site-footer">
-    Footer
-<#--codeaim-->
+    <div class="Footer">
+        <div class="Footer-credits">
+            <span class="Footer-credit">
+                copyright © 2016 codeaim
+            </span>
+        </div>
+    </div>
 </footer>
 </body>
 </html>
