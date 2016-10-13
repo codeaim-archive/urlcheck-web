@@ -81,6 +81,67 @@
     font-size: 2.5em;
 }
 
+.Login, .Register {
+    max-width: 30em;
+    margin: 0 auto;
+}
+
+.Login .title, .Register .title {
+    margin: 1em 0 2em 0;
+    text-align: center;
+    background-color: #e0e0e0;
+    height: 2px;
+    font-weight: normal;
+}
+
+.Login .title span, .Register .title span {
+    display: inline-block;
+    position: relative;
+    top: -1.25em;
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+    background-color: #e0e0e0;
+    color: #999999;
+    border-left: 2em solid #ffffff;
+    border-right: 2em solid #ffffff;
+}
+
+.Login label, .Register label {
+    display: block;
+    text-transform: uppercase;
+    padding-bottom: 0.5em;
+    font-size: 0.75em;
+}
+
+.Login input, .Register input {
+    padding: 0.5em;
+    width: 100%;
+}
+
+.Login input[placeholder], .Register input[placeholder] {
+    color: #b0b0b0;
+}
+
+.Login-submit, .Register-submit {
+    margin-top: 2em;
+}
+
+.Login-submit input, .Register-submit input {
+    border: 0;
+    outline: none;
+    background-color: #5c4;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.Login-submit input:hover, .Register-submit input:hover {
+    background-color: #4db23e;
+}
+
+.Login-email, .Login-password, .Register-email, .Register-password, .Register-confirm-password {
+    padding-bottom: 1em;
+}
+
 .Container {
     margin: 0 auto;
     width: 100%;

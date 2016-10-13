@@ -1,4 +1,4 @@
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <title>urlcheck.io</title>
@@ -22,28 +22,26 @@
     <#--</div>-->
     </div>
 </header>
-<section class="Status <#if downCount gt 0>Status-down</#if>">
-    <div class="Status-content">
-    <#if downCount == 0>
-        Up and running!
-    <#else>
-    ${downCount} down
-    </#if>
-    </div>
-</section>
 <main class="Site-content">
     <div class="Container">
-        <section class="Checks">
-        <#list checks as check>
-            <div class="Check">
-                <div class="Check-name">
-                ${check.name}
-                </div>
-                <div class="Check-status">
-                    <span class="Check-${check.status?lower_case}">${check.status}</span>
-                </div>
+        <section class="Register">
+            <div class="title">
+                <span>Register</span></div>
+            <div class="Register-email">
+                <label>Email</label>
+                <input type="email" title="Email" placeholder="example@example.com" />
             </div>
-        </#list>
+            <div class="Register-password">
+                <label>Password</label>
+                <input type="password" title="Password" placeholder="password" />
+            </div>
+            <div class="Register-confirm-password">
+                <label>Confirm password</label>
+                <input type="password" title="Confirm password" placeholder="Confirm password" />
+            </div>
+            <div class="Register-submit">
+                <input type="submit" name="Register" value="Register">
+            </div>
         </section>
     </div>
 </main>
