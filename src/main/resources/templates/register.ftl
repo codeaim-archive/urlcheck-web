@@ -14,7 +14,7 @@
 <header class="Site-header">
     <div class="Header">
         <div class="Header-title">
-            <i class="fa fa-clock-o"></i><span> urlcheck.</span><span class="Header-color">io</span>
+            <i class="icon-urlcheck"></i><span> urlcheck.</span><span class="Header-color">io</span>
         </div>
     <#--<div class="Header-action">-->
     <#--<p>signed in as <a href="#">GDownes</a> <i class="fa fa-user"></i> | <i class="fa fa-sign-out"></i> <a-->
@@ -40,7 +40,7 @@
                 <input type="password" title="Confirm password" placeholder="Confirm password" />
             </div>
             <div class="Register-submit">
-                <input type="submit" name="Register" value="Register">
+                <input type="submit" value="Register">
             </div>
         </section>
     </div>

@@ -60,6 +60,19 @@
     border-bottom: 2px solid #ffceb8;
 }
 
+.Header input {
+    margin-top: 1em;
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    cursor: pointer;
+    color: #e43;
+}
+
+.Header input:hover {
+    border-bottom: 2px solid #ffceb8;
+}
+
 .Header-action {
     display: flex;
     flex: 1;
@@ -122,6 +135,22 @@
     color: #b0b0b0;
 }
 
+.Login-message {
+    font-size: 0.8em;
+    text-align: center;
+    flex: 1;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.Login-success {
+    background-color: #DBF0D8;
+}
+
+.Login-error {
+    background-color: #FBD1CC;
+}
+
 .Login-submit, .Register-submit {
     margin-top: 2em;
 }
@@ -162,8 +191,28 @@
     border-style: solid;
 }
 
-.Check-name {
+.Check-name, .Check-url, .Check-interval {
     flex: 1;
+    padding-right: 1em;
+}
+
+.Check-submit {
+    flex: 1;
+}
+
+.Check-create-title {
+    font-size: 2em;
+    text-align: center;
+}
+
+.Check-create {
+    display: flex;
+    flex-direction: column;
+}
+
+.Check-create input {
+    width: 100%;
+    padding: 0.5em;
 }
 
 .Check-status {
@@ -201,4 +250,40 @@
     .Header-action {
         justify-content: flex-end;
     }
+
+    .Check-create {
+        flex-direction: row;
+    }
 }
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?xakhsy');
+    src:  url('../fonts/icomoon.eot?xakhsy#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?xakhsy') format('truetype'),
+    url('../fonts/icomoon.woff?xakhsy') format('woff'),
+    url('../fonts/icomoon.svg?xakhsy#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-urlcheck:before {
+    content: "\e900";
+}
+
+

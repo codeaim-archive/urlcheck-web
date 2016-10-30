@@ -12,4 +12,5 @@ import org.springframework.stereotype.Component;
 public class WebConfiguration
 {
     private String getChecksEndpoint = "http://localhost:6601/check";
+    private String getUserByUsernameEndpoint = "http://localhost:6601/user/{username}";
 }
