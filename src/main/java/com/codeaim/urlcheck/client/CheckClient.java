@@ -28,17 +28,19 @@ public class CheckClient
         this.restTemplate = restTemplate;
     }
 
-    @HystrixCommand(fallbackMethod = "getChecksFallback")
-    public List<Check> getChecks()
+    @HystrixCommand(fallbackMethod = "getChecksByUsernameFallback")
+    public List<Check> getChecksByUsername(String username)
     {
-        return restTemplate.exchange(webConfiguration.getGetChecksEndpoint(),
+        return restTemplate.exchange(webConfiguration
+                        .getGetChecksByUsernameEndpoint()
+                        .replace("{username}", username),
                 HttpMethod.GET,
                 null,
                 new ParameterizedTypeReference<List<Check>>() {})
                 .getBody();
     }
 
-    public List<Check> getChecksFallback()
+    public List<Check> getChecksByUsernameFallback(String username)
     {
         return Collections.emptyList();
     }

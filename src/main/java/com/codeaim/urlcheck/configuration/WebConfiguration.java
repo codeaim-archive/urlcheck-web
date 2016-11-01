@@ -11,6 +11,6 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "urlcheck.web")
 public class WebConfiguration
 {
-    private String getChecksEndpoint = "http://localhost:6601/check";
+    private String getChecksByUsernameEndpoint = "http://localhost:6601/check/{username}";
     private String getUserByUsernameEndpoint = "http://localhost:6601/user/{username}";
 }
