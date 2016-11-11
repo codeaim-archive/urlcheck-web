@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Objects;
 
 @Controller
-@RequestMapping(value = "/dashboard")
 public class DashboardController
 {
     private final CheckClient checkClient;
@@ -26,13 +25,13 @@ public class DashboardController
         this.checkClient = checkClient;
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
     public String dashboardRedirect(Principal principal)
     {
-        return "redirect:/dashboard/" + principal.getName();
+        return "redirect:/" + principal.getName() + "/dashboard";
     }
 
-    @RequestMapping(value = "/{username:.+}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{username:.+}/dashboard", method = RequestMethod.GET)
     public String dashboard(
             @PathVariable(value = "username")
                     String username,
@@ -41,7 +40,7 @@ public class DashboardController
     )
     {
         if (!Objects.equals(username, principal.getName()))
-            return "redirect:/dashboard/" + principal.getName();
+            return "redirect:/" + principal.getName() + "/dashboard";
 
         List<Check> checks = checkClient
                 .getChecksByUsername(username);
