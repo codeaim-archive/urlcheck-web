@@ -14,5 +14,8 @@ public class Check
     private String url;
     private Status status;
     private Long latestResultId;
+    private Integer interval;
+    private String address;
+    private String protocol;
     private boolean confirming;
 }

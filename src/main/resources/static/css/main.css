@@ -187,13 +187,28 @@
     flex-direction: row;
     padding: 1em;
     border-color: #eee;
-    border-width: 1px 1px 0 3px;
+    border-width: 0 1px 1px 3px;
     border-style: solid;
 }
 
 .Check-name, .Check-url, .Check-interval {
     flex: 1;
     padding-right: 1em;
+}
+
+.Check-create-url-name-interval-actions-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.Check-create-name-interval-actions-group {
+    display: flex;
+    flex-direction: column;;
+}
+
+.Check-create-interval-actions-group {
+    display: flex;
+    flex-direction: column;
 }
 
 .Check-submit {
@@ -206,13 +221,71 @@
 }
 
 .Check-create {
-    display: flex;
-    flex-direction: column;
+    padding: 1em 1em 0.5em 1em;
+    border-color: #eee;
+    border-width: 1px 1px 1px 3px;
+    border-style: solid;
 }
 
-.Check-create input {
-    width: 100%;
+.Check-create-url, .Check-create-name, .Check-create-interval {
+    flex: 1;
+}
+
+.Check-create-url i, .Check-create-name i, .Check-create-interval i {
     padding: 0.5em;
+    width: 2em;
+}
+
+.Check-create-field {
+    display: flex;
+    align-items: center;
+}
+
+.Check-create-actions button {
+    border: 0;
+    background-color: transparent;
+}
+
+.Check-create-actions i {
+    padding: 1em;
+    margin-top: -0.25em;
+    border: 0;
+    background-color: transparent;
+    color: #a3a3a3;
+    border-radius: 50%;
+}
+
+.Check-create-actions i:hover {
+    color: #5c4;
+    background-color: #e6f7e3;
+    cursor: pointer;
+}
+
+.Check-create-url select {
+    padding: 0.5em 0;
+    direction: rtl;
+    border: 0;
+}
+
+.Check-create-url input {
+    border: 0;
+    padding: 0.5em 0.5em 0.5em 0.1em;
+    flex: 1;
+}
+
+.Check-create-name input {
+    border: 0;
+    padding: 0.5em;
+    flex: 1;
+}
+
+.Check-create-interval select {
+    border: 0;
+    padding: 0.5em;
+}
+
+.Check-create form {
+    margin: 0;
 }
 
 .Check-status {
@@ -242,7 +315,13 @@
     padding: 0.25em 0.75em;
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 480px) {
+    .Check-create-interval-actions-group {
+        flex-direction: row;
+    }
+}
+
+@media only screen and (min-width: 768px) {
     .Header {
         display: flex;
     }
@@ -254,7 +333,27 @@
     .Check-create {
         flex-direction: row;
     }
+
+    .Check-create-name-interval-actions-group {
+        flex-direction: row;
+    }
+
+    .Check-create-interval-actions-group {
+        flex: 1;
+    }
 }
+
+@media only screen and (min-width: 1024px) {
+    .Check-create-url-name-interval-actions-group {
+        flex-direction: row;
+    }
+
+    .Check-create-name-interval-actions-group {
+        flex: 1.5;
+    }
+}
+
+
 
 @font-face {
     font-family: 'icomoon';
