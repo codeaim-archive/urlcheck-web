@@ -45,7 +45,7 @@
         <p class="Check-create-title">Create your first check</p>
     </#if>
         <section class="Check-create">
-            <form name="check" action="/check" method="post">
+            <form name="create-check" action="/check" method="post">
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <div class="Check-create-url-name-interval-actions-group">
                     <div class="Check-create-url">
@@ -101,6 +101,14 @@
                     </div>
                     <div class="Check-status">
                         <span class="Check-${check.status?lower_case}">${check.status}</span>
+                    </div>
+                    <div class="Check-delete">
+                        <form name="delete-check-${check.id}" action="/check/${check.id}" method="post">
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                            <button type="submit">
+                                <i class="fa fa-trash-o"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </#list>

@@ -48,13 +48,23 @@ public class CheckClient
     {
         return restTemplate.exchange(
                 webConfiguration
-                        .getGetChecksByUsernameEndpoint()
+                        .getCreateCheckEndpoint()
                         .replace("{username}", username),
                 HttpMethod.POST,
                 new HttpEntity<Check>(check, null),
                 Check.class,
                 Collections.emptyMap())
                 .getBody();
+    }
+
+    @HystrixCommand(fallbackMethod = "deleteCheckFallback")
+    public void deleteCheck(Long id, String username)
+    {
+        restTemplate.delete(
+                webConfiguration
+                        .getDeleteCheckEndpoint()
+                        .replace("{username}", username)
+                        .replace("{id}", id.toString()));
     }
 
     public List<Check> getChecksByUsernameFallback(String username)
@@ -65,5 +75,9 @@ public class CheckClient
     public Check createCheckFallback(Check check, String username)
     {
         return check;
+    }
+
+    public void deleteCheckFallback(Long id, String username)
+    {
     }
 }

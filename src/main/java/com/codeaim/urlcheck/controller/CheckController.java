@@ -51,4 +51,14 @@ public class CheckController
 
         return "redirect:dashboard";
     }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.POST)
+    public String deleteCheck(
+            @PathVariable(value = "id", required = true)
+            long id,
+            Principal principal
+    ) {
+        checkClient.deleteCheck(id, principal.getName());
+        return "redirect:dashboard";
+    }
 }

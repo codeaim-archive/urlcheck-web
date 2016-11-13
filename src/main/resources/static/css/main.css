@@ -185,7 +185,8 @@
     flex: 1;
     display: flex;
     flex-direction: row;
-    padding: 1em;
+    align-items: center;
+    padding: 0.5em 1em;
     border-color: #eee;
     border-width: 0 1px 1px 3px;
     border-style: solid;
@@ -194,6 +195,33 @@
 .Check-name, .Check-url, .Check-interval {
     flex: 1;
     padding-right: 1em;
+}
+
+.Check-delete form {
+    margin-bottom: 0;
+}
+
+.Check-delete form {
+    margin-bottom: 0;
+}
+
+.Check-delete button {
+    border: 0;
+    background-color: transparent;
+}
+
+.Check-delete i {
+    padding: 1em;
+    border: 0;
+    background-color: transparent;
+    color: #a3a3a3;
+    border-radius: 50%;
+}
+
+.Check-delete i:hover {
+    color: #e43;
+    background-color: #fcdad6;
+    cursor: pointer;
 }
 
 .Check-create-url-name-interval-actions-group {
