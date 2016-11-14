@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
 import java.security.Principal;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping(value = "/check")
@@ -43,9 +45,16 @@ public class CheckController
             return "redirect:dashboard";
         }
 
-        check.setUrl(check.getProtocol() + "://" + check.getAddress());
+        check.setUrl(check.getProtocol() + "://" + check.getPath());
         if(check.getName().isEmpty())
             check.setName(check.getUrl());
+
+        if(check.getHeaderList() != null && check.getHeaderList().size() > 0)
+            check.setHeaders(new HashSet<>(check
+                    .getHeaderList()
+                    .stream()
+                    .filter(x -> !x.getName().isEmpty())
+                    .collect(Collectors.toList())));
 
         checkClient.createCheck(check, principal.getName());
 

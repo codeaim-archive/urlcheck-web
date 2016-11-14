@@ -264,6 +264,41 @@
     width: 2em;
 }
 
+.Check-create-header i {
+    padding: 0.5em;
+    width: 2em;
+}
+
+.Check-create-header-groups {
+    display: flex;
+    flex-direction: column;
+}
+
+.Check-create-header-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.Check-create-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.Check-create-header-name {
+    display: flex;
+    align-items: center;
+}
+
+.Check-create-header-value {
+    margin-left: 2em;
+    display: flex;
+}
+
+.Check-create-header input {
+    padding: 0.5em;
+    border: 0;
+    flex: 1;
+}
 .Check-create-field {
     display: flex;
     align-items: center;
@@ -272,6 +307,7 @@
 .Check-create-actions button {
     border: 0;
     background-color: transparent;
+    padding-left: 0;
 }
 
 .Check-create-actions i {
@@ -347,6 +383,19 @@
     .Check-create-interval-actions-group {
         flex-direction: row;
     }
+
+    .Check-create-header {
+        flex-direction: row;
+    }
+
+    .Check-create-header-name {
+        flex: 1;
+    }
+
+    .Check-create-header-value {
+        margin-left: 0em;
+        flex: 1;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -377,7 +426,15 @@
     }
 
     .Check-create-name-interval-actions-group {
-        flex: 1.5;
+        flex: 2;
+    }
+
+    .Check-create-header-group {
+        flex-direction: row;
+    }
+
+    .Check-create-header {
+        flex: 1;
     }
 }
 

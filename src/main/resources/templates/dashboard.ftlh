@@ -56,7 +56,7 @@
                                 <option value="https">https</option>
                             </select>
                             <span>://</span>
-                            <input type="text" name="address" title="Url" placeholder="www.website.com"/>
+                            <input type="text" name="path" title="Url" placeholder="www.website.com"/>
                         </div>
                     </div>
                     <div class="Check-create-name-interval-actions-group">
@@ -82,10 +82,60 @@
                                 </div>
                             </div>
                             <div class="Check-create-actions">
-                            <#--<i class="fa fa-gears"></i>-->
+                                <i class="fa fa-gears"></i>
                                 <button type="submit">
                                     <i class="fa fa-save"></i>
                                 </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Check-create-header-groups">
+                    <div class="Check-create-header-group">
+                        <div class="Check-create-header">
+                            <div class="Check-create-header-name">
+                                <i class="fa fa-header"></i>
+                                <input type="text" name="headerList[0].name" title="Header name"
+                                       placeholder="header name">
+                            </div>
+                            <div class="Check-create-header-value">
+                                <input type="text" name="headerList[0].value" title="Header value"
+                                       placeholder="header value">
+                            </div>
+                        </div>
+                        <div class="Check-create-header">
+                            <div class="Check-create-header-name">
+                                <i class="fa fa-header"></i>
+                                <input type="text" name="headerList[1].name" title="Header name"
+                                       placeholder="header name">
+                            </div>
+                            <div class="Check-create-header-value">
+                                <input type="text" name="headerList[1].value" title="Header value"
+                                       placeholder="header value">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Check-create-header-group">
+                        <div class="Check-create-header">
+                            <div class="Check-create-header-name">
+                                <i class="fa fa-header"></i>
+                                <input type="text" name="headerList[2].name" title="Header name"
+                                       placeholder="header name">
+                            </div>
+                            <div class="Check-create-header-value">
+                                <input type="text" name="headerList[2].value" title="Header value"
+                                       placeholder="header value">
+                            </div>
+                        </div>
+                        <div class="Check-create-header">
+                            <div class="Check-create-header-name">
+                                <i class="fa fa-header"></i>
+                                <input type="text" name="headerList[3].name" title="Header name"
+                                       placeholder="header name">
+                            </div>
+                            <div class="Check-create-header-value">
+                                <input type="text" name="headerList[3].value" title="Header value"
+                                       placeholder="header value">
                             </div>
                         </div>
                     </div>
