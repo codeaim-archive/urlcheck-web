@@ -94,7 +94,7 @@
                     <div class="Check-create-header-group">
                         <div class="Check-create-header">
                             <div class="Check-create-header-name">
-                                <i class="fa fa-header"></i>
+                                <i class="icon-header"></i>
                                 <input type="text" name="headerList[0].name" title="Header name"
                                        placeholder="header name">
                             </div>
@@ -105,7 +105,7 @@
                         </div>
                         <div class="Check-create-header">
                             <div class="Check-create-header-name">
-                                <i class="fa fa-header"></i>
+                                <i class="icon-header"></i>
                                 <input type="text" name="headerList[1].name" title="Header name"
                                        placeholder="header name">
                             </div>
@@ -118,7 +118,7 @@
                     <div class="Check-create-header-group">
                         <div class="Check-create-header">
                             <div class="Check-create-header-name">
-                                <i class="fa fa-header"></i>
+                                <i class="icon-header"></i>
                                 <input type="text" name="headerList[2].name" title="Header name"
                                        placeholder="header name">
                             </div>
@@ -129,7 +129,7 @@
                         </div>
                         <div class="Check-create-header">
                             <div class="Check-create-header-name">
-                                <i class="fa fa-header"></i>
+                                <i class="icon-header"></i>
                                 <input type="text" name="headerList[3].name" title="Header name"
                                        placeholder="header name">
                             </div>
