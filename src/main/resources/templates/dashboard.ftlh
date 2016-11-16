@@ -44,7 +44,7 @@
     <#if checks?size == 0>
         <p class="Check-create-title">Create your first check</p>
     </#if>
-        <section class="Check-create">
+        <section id="create" class="Check-create">
             <form name="create-check" action="/check" method="post">
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <div class="Check-create-url-name-interval-actions-group">
@@ -82,7 +82,9 @@
                                 </div>
                             </div>
                             <div class="Check-create-actions">
-                                <i class="fa fa-gears"></i>
+                                <label for="settings-show">
+                                    <i class="fa fa-sliders"></i>
+                                </label>
                                 <button type="submit">
                                     <i class="fa fa-save"></i>
                                 </button>
@@ -90,53 +92,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="Check-create-header-groups">
-                    <div class="Check-create-header-group">
-                        <div class="Check-create-header">
-                            <div class="Check-create-header-name">
-                                <i class="icon-header"></i>
-                                <input type="text" name="headerList[0].name" title="Header name"
-                                       placeholder="header name">
-                            </div>
-                            <div class="Check-create-header-value">
-                                <input type="text" name="headerList[0].value" title="Header value"
-                                       placeholder="header value">
-                            </div>
+                <input type="checkbox" id="settings-show" role="button">
+                <div id="settings">
+                    <div class="Check-create-header">
+                        <div class="Check-create-header-name">
+                            <i class="icon-header"></i>
+                            <input type="text" name="headerList[0].name" title="Header name" placeholder="header name">
                         </div>
-                        <div class="Check-create-header">
-                            <div class="Check-create-header-name">
-                                <i class="icon-header"></i>
-                                <input type="text" name="headerList[1].name" title="Header name"
-                                       placeholder="header name">
-                            </div>
-                            <div class="Check-create-header-value">
-                                <input type="text" name="headerList[1].value" title="Header value"
-                                       placeholder="header value">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="Check-create-header-group">
-                        <div class="Check-create-header">
-                            <div class="Check-create-header-name">
-                                <i class="icon-header"></i>
-                                <input type="text" name="headerList[2].name" title="Header name"
-                                       placeholder="header name">
-                            </div>
-                            <div class="Check-create-header-value">
-                                <input type="text" name="headerList[2].value" title="Header value"
-                                       placeholder="header value">
-                            </div>
-                        </div>
-                        <div class="Check-create-header">
-                            <div class="Check-create-header-name">
-                                <i class="icon-header"></i>
-                                <input type="text" name="headerList[3].name" title="Header name"
-                                       placeholder="header name">
-                            </div>
-                            <div class="Check-create-header-value">
-                                <input type="text" name="headerList[3].value" title="Header value"
-                                       placeholder="header value">
-                            </div>
+                        <div class="Check-create-header-value">
+                            <input type="text" name="headerList[0].value" title="Header value"
+                                   placeholder="header value">
+                            <label for="settings-show">
+                                <i class="fa fa-minus-square-o"></i>
+                            </label>
+                            <i class="fa fa-plus-square-o"></i>
                         </div>
                     </div>
                 </div>
@@ -145,15 +114,36 @@
     <#if checks?size gt 0>
         <section class="Checks">
             <#list checks as check>
-                <div class="Check">
+                <div id="check-${check.id}" class="Check">
+                    <div class="Check-disable">
+                        <form name="update-check" action="/check/${check.id}/update" method="post">
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                            <input name="name" type="hidden" value="${check.name}"/>
+                            <input name="url" type="hidden" value="${check.url}"/>
+                            <input name="interval" type="hidden" value="${check.interval}"/>
+                            <input name="checkDisabled" type="hidden" value="<#if check.disabled?has_content>true<#else>false</#if>">
+                            <input name="disable" type="hidden" value="true"/>
+                            <button type="submit">
+                                <#if check.disabled?has_content>
+                                    <i class="fa fa-toggle-on fa-rotate-180"></i>
+                                <#else>
+                                    <i class="fa fa-toggle-on active"></i>
+                                </#if>
+                            </button>
+                        </form>
+                    </div>
                     <div class="Check-name">
                     ${check.name}
                     </div>
                     <div class="Check-status">
-                        <span class="Check-${check.status?lower_case}">${check.status}</span>
+                        <#if check.disabled?has_content>
+                            <span class="Check-disabled">disabled</span>
+                        <#else>
+                            <span class="Check-${check.status?lower_case}">${check.status}</span>
+                        </#if>
                     </div>
                     <div class="Check-delete">
-                        <form name="delete-check-${check.id}" action="/check/${check.id}" method="post">
+                        <form name="delete-check-${check.id}" action="/check/${check.id}/delete" method="post">
                             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                             <button type="submit">
                                 <i class="fa fa-trash-o"></i>

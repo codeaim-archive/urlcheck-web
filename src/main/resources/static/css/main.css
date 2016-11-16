@@ -176,6 +176,30 @@
     width: 100%;
 }
 
+.active {
+    color: #55cc44;
+}
+
+.Check-disable {
+    font-size: 1.5em;
+}
+
+.Check-disable form {
+    margin: 0;
+}
+
+.Check-disable button {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+}
+
+.Check-disable i {
+    cursor: pointer;
+    margin: 0.5em 1em 0.5em 0.25em;
+}
+
+
 .Checks {
     flex-direction: column;
     border-bottom: 1px solid #eee;
@@ -218,6 +242,7 @@
     border-radius: 50%;
 }
 
+
 .Check-delete i:hover {
     color: #e43;
     background-color: #fcdad6;
@@ -243,6 +268,14 @@
     flex: 1;
 }
 
+.Check-disable {
+    font-size: 1.5em;
+}
+
+.Check-disable i {
+    cursor: pointer;
+}
+
 .Check-create-title {
     font-size: 2em;
     text-align: center;
@@ -266,17 +299,6 @@
 
 .Check-create-header i {
     padding: 0.5em;
-    width: 2em;
-}
-
-.Check-create-header-groups {
-    display: flex;
-    flex-direction: column;
-}
-
-.Check-create-header-group {
-    display: flex;
-    flex-direction: column;
 }
 
 .Check-create-header {
@@ -287,17 +309,38 @@
 .Check-create-header-name {
     display: flex;
     align-items: center;
+    min-width: 4em;
 }
 
 .Check-create-header-value {
     margin-left: 2em;
     display: flex;
+    min-width: 4em;
+}
+
+.Check-create-header-value i {
+    padding: 1em;
+    width: 45px;
+    height: 45px;
+    color: #a3a3a3;
+    margin-right: 0.3em;
+    margin-top: -0.25em;
+    border: 0;
+    background-color: transparent;
+    border-radius: 50%;
+}
+
+.Check-create-header-value i:hover {
+    color: #666;
+    background-color: #eee;
+    cursor: pointer;
 }
 
 .Check-create-header input {
     padding: 0.5em;
     border: 0;
     flex: 1;
+    min-width: 4em;
 }
 
 .Check-create-field {
@@ -309,6 +352,12 @@
     border: 0;
     background-color: transparent;
     padding-left: 0;
+}
+
+.Check-create-actions label i:hover {
+    color: #666;
+    background-color: #eee;
+    cursor: pointer;
 }
 
 .Check-create-actions i {
@@ -374,10 +423,26 @@
     padding: 0.25em 0.75em;
 }
 
-.Check-unknown {
+.Check-unknown, .Check-disabled {
     color: #999;
     background-color: #ebebeb;
     padding: 0.25em 0.75em;
+}
+
+#settings-show {
+    display: none;
+}
+
+#settings-show:checked #settings {
+    display: block;
+}
+
+input[type=checkbox]:checked ~ #settings{
+    display: block;
+}
+
+#settings {
+    display: none;
 }
 
 @media only screen and (min-width: 480px) {
@@ -395,6 +460,7 @@
 
     .Check-create-header-value {
         margin-left: 0em;
+        min-width: 4em;
         flex: 1;
     }
 }
@@ -428,14 +494,6 @@
 
     .Check-create-name-interval-actions-group {
         flex: 2;
-    }
-
-    .Check-create-header-group {
-        flex-direction: row;
-    }
-
-    .Check-create-header {
-        flex: 1;
     }
 }
 
