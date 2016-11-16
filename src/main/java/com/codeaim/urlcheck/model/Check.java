@@ -7,8 +7,6 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.NotNull;
 import java.time.Instant;
-import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -34,4 +32,5 @@ public class Check
     private Instant disabled;
     private Set<Header> headers;
     private List<Header> headerList;
+    private boolean internal;
 }

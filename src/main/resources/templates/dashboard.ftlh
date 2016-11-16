@@ -108,6 +108,17 @@
                             <i class="fa fa-plus-square-o"></i>
                         </div>
                     </div>
+                    <div class="Check-create-internal">
+                        <i class="fa fa-globe"></i>
+                        <span>internal</span>
+                        <input type="checkbox" id="internal" role="button">
+                        <label id="internal-off" for="internal">
+                            <i class="fa fa-toggle-on fa-rotate-180"></i>
+                        </label>
+                        <label id="internal-on" for="internal">
+                            <i class="fa fa-toggle-on active"></i>
+                        </label>
+                    </div>
                 </div>
             </form>
         </section>
@@ -121,7 +132,8 @@
                             <input name="name" type="hidden" value="${check.name}"/>
                             <input name="url" type="hidden" value="${check.url}"/>
                             <input name="interval" type="hidden" value="${check.interval}"/>
-                            <input name="checkDisabled" type="hidden" value="<#if check.disabled?has_content>true<#else>false</#if>">
+                            <input name="checkDisabled" type="hidden"
+                                   value="<#if check.disabled?has_content>true<#else>false</#if>">
                             <input name="disable" type="hidden" value="true"/>
                             <button type="submit">
                                 <#if check.disabled?has_content>

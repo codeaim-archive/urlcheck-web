@@ -429,19 +429,31 @@
     padding: 0.25em 0.75em;
 }
 
-#settings-show {
+#settings-show, #internal {
     display: none;
 }
 
-#settings-show:checked #settings {
+#settings-show:checked ~ #settings {
     display: block;
 }
 
-input[type=checkbox]:checked ~ #settings{
-    display: block;
+#internal:checked ~ #internal-off {
+    display: none;
 }
 
-#settings {
+#internal:checked ~ #internal-on {
+    display: inline-block;
+}
+
+#settings{
+    display: none;
+}
+
+#internal-off {
+    display: inline-block;
+}
+
+#internal-on {
     display: none;
 }
 
