@@ -5,8 +5,7 @@
     <meta name="description" content="A simple url monitor">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Lobster|Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <script src="https://use.fontawesome.com/b90ae1439a.js"></script>
-    <#--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+    <link rel="stylesheet" href="/css/font-awesome.css">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/main.css">
 </head>
