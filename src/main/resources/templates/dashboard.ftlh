@@ -93,25 +93,118 @@
                     </div>
                 </div>
                 <input type="checkbox" id="settings-show" role="button">
+                <input type="checkbox" name="headerList[1].active" id="show-header-2" role="button">
+                <input type="checkbox" name="headerList[2].active" id="show-header-3" role="button">
+                <input type="checkbox" name="headerList[3].active" id="show-header-4" role="button">
+                <input type="checkbox" name="headerList[4].active" id="show-header-5" role="button">
+                <input type="checkbox" name="headerList[5].active" id="show-header-6" role="button">
                 <div id="settings">
                     <div class="Check-create-header">
                         <div class="Check-create-header-name">
                             <i class="icon-header"></i>
-                            <input type="text" name="headerList[0].name" title="Header name" placeholder="header name">
+                            <input type="hidden" name="headerList[0].active" value="true" />
+                            <input type="text" name="headerList[0].name" title="Header name" placeholder="header name" />
                         </div>
                         <div class="Check-create-header-value">
                             <input type="text" name="headerList[0].value" title="Header value"
-                                   placeholder="header value">
-                            <label for="settings-show">
+                                   placeholder="header value" />
+                            <label id="header-2-on" for="show-header-2">
+                                <i class="fa fa-plus-square-o"></i>
+                            </label>
+                            <label id="header-2-off" for="show-header-2">
                                 <i class="fa fa-minus-square-o"></i>
                             </label>
-                            <i class="fa fa-plus-square-o"></i>
                         </div>
                     </div>
+
+                    <div id="header-2" class="Check-create-header">
+                        <div class="Check-create-header-name">
+                            <i class="icon-header"></i>
+                            <input type="hidden" name="headerList[1].active" value="true" />
+                            <input type="text" name="headerList[1].name" title="Header name" placeholder="header name" />
+                        </div>
+                        <div class="Check-create-header-value">
+                            <input type="text" name="headerList[1].value" title="Header value"
+                                   placeholder="header value" />
+                            <label id="header-3-on" for="show-header-3">
+                                <i class="fa fa-plus-square-o"></i>
+                            </label>
+                            <label id="header-3-off" for="show-header-3">
+                                <i class="fa fa-minus-square-o"></i>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="header-3" class="Check-create-header">
+                        <div class="Check-create-header-name">
+                            <i class="icon-header"></i>
+                            <input type="hidden" name="headerList[2].active" value="true" />
+                            <input type="text" name="headerList[2].name" title="Header name" placeholder="header name" />
+                        </div>
+                        <div class="Check-create-header-value">
+                            <input type="text" name="headerList[2].value" title="Header value"
+                                   placeholder="header value" />
+                            <label id="header-4-on" for="show-header-4">
+                                <i class="fa fa-plus-square-o"></i>
+                            </label>
+                            <label id="header-4-off" for="show-header-4">
+                                <i class="fa fa-minus-square-o"></i>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="header-4" class="Check-create-header">
+                        <div class="Check-create-header-name">
+                            <i class="icon-header"></i>
+                            <input type="hidden" name="headerList[3].active" value="true" />
+                            <input type="text" name="headerList[3].name" title="Header name" placeholder="header name" />
+                        </div>
+                        <div class="Check-create-header-value">
+                            <input type="text" name="headerList[3].value" title="Header value"
+                                   placeholder="header value" />
+                            <label id="header-5-on" for="show-header-5">
+                                <i class="fa fa-plus-square-o"></i>
+                            </label>
+                            <label id="header-5-off" for="show-header-5">
+                                <i class="fa fa-minus-square-o"></i>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="header-5" class="Check-create-header">
+                        <div class="Check-create-header-name">
+                            <i class="icon-header"></i>
+                            <input type="hidden" name="headerList[4].active" value="true" />
+                            <input type="text" name="headerList[4].name" title="Header name" placeholder="header name" />
+                        </div>
+                        <div class="Check-create-header-value">
+                            <input type="text" name="headerList[4].value" title="Header value"
+                                   placeholder="header value" />
+                            <label id="header-6-on" for="show-header-6">
+                                <i class="fa fa-plus-square-o"></i>
+                            </label>
+                            <label id="header-6-off" for="show-header-6">
+                                <i class="fa fa-minus-square-o"></i>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="header-6" class="Check-create-header">
+                        <div class="Check-create-header-name">
+                            <i class="icon-header"></i>
+                            <input type="hidden" name="headerList[5].active" value="true" />
+                            <input type="text" name="headerList[5].name" title="Header name" placeholder="header name" />
+                        </div>
+                        <div class="Check-create-header-value">
+                            <input type="text" name="headerList[5].value" title="Header value"
+                                   placeholder="header value" />
+                        </div>
+                    </div>
+
                     <div class="Check-create-internal">
-                        <i class="fa fa-globe"></i>
+                        <i class="fa fa-cloud-download"></i>
                         <span>internal</span>
-                        <input type="checkbox" id="internal" role="button">
+                        <input name="internal" type="checkbox" id="internal" role="button">
                         <label id="internal-off" for="internal">
                             <i class="fa fa-toggle-on fa-rotate-180"></i>
                         </label>

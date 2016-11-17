@@ -2,6 +2,7 @@ package com.codeaim.urlcheck.controller;
 
 import com.codeaim.urlcheck.client.CheckClient;
 import com.codeaim.urlcheck.model.Check;
+import com.codeaim.urlcheck.model.Header;
 import com.codeaim.urlcheck.model.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -64,6 +65,7 @@ public class CheckController
             check.setHeaders(new HashSet<>(check
                     .getHeaderList()
                     .stream()
+                    .filter(Header::isActive)
                     .filter(x -> !x.getName().isEmpty())
                     .collect(Collectors.toList())));
 

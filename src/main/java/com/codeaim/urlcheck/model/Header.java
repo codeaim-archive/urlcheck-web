@@ -11,6 +11,7 @@ public class Header
 {
     private String name;
     private String value;
+    private boolean active;
 
     @Override
     public boolean equals(Object o)

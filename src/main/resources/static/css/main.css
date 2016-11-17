@@ -429,6 +429,20 @@
     padding: 0.25em 0.75em;
 }
 
+.Check-create-internal {
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+}
+
+.Check-create-internal span {
+    padding: 0 1em;
+}
+
+.Check-create-internal label i {
+    font-size: 1.5em;
+}
+
 #settings-show, #internal {
     display: none;
 }
@@ -447,6 +461,22 @@
 
 #settings{
     display: none;
+}
+
+#show-header-2, #header-2, #header-2-off, #show-header-3, #header-3, #header-3-off, #show-header-4, #header-4, #header-4-off, #show-header-5, #header-5, #header-5-off, #show-header-6, #header-6, #header-6-off {
+    display: none;
+}
+
+#show-header-2:checked ~ #settings #header-2-on, #show-header-3:checked ~ #settings #header-3-on,  #show-header-4:checked ~ #settings #header-4-on, #show-header-5:checked ~ #settings #header-5-on, #show-header-6:checked ~ #settings #header-6-on {
+    display: none;
+}
+
+#show-header-2:checked ~ #settings #header-2-off, #show-header-3:checked ~ #settings #header-3-off, #show-header-4:checked ~ #settings #header-4-off, #show-header-5:checked ~ #settings #header-5-off, #show-header-6:checked ~ #settings #header-6-off {
+    display: inline-block;
+}
+
+#show-header-2:checked ~ #settings #header-2, #show-header-3:checked ~ #settings #header-3,  #show-header-4:checked ~ #settings #header-4, #show-header-5:checked ~ #settings #header-5, #show-header-6:checked ~ #settings #header-6 {
+    display: flex;
 }
 
 #internal-off {
