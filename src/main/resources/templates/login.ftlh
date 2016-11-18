@@ -37,6 +37,11 @@
                         You have been logged out
                     </div>
                 </#if>
+                <#if RequestParameters.verified??>
+                    <div class="Login-message Login-success">
+                        Your account has been verified
+                    </div>
+                </#if>
                 <div class="Login-email">
                     <label>Email / Username</label>
                     <input type="text" name="username" title="Email / Username" placeholder="example@example.com"/>

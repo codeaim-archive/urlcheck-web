@@ -2,7 +2,9 @@ package com.codeaim.urlcheck.client;
 
 import com.codeaim.urlcheck.configuration.WebConfiguration;
 import com.codeaim.urlcheck.model.User;
+import com.codeaim.urlcheck.model.Verify;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -47,4 +49,18 @@ public class UserClient implements UserDetailsService
         }
     }
 
+    public boolean verifyEmail(
+            String username,
+            String emailVerificationToken
+    )
+    {
+        ResponseEntity<Void> response = this.restTemplate.postForEntity(
+                webConfiguration
+                        .getVerifyUserEmailEndpoint()
+                        .replace("{username}", username),
+                new Verify().setEmailVerificationToken(emailVerificationToken),
+                Void.class);
+
+        return response.getStatusCode().equals(HttpStatus.OK);
+    }
 }
