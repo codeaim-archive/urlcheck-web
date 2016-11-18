@@ -8,17 +8,21 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter
 {
     private UserClient userClient;
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
-    public WebSecurityConfiguration(UserClient userClient)
+    public WebSecurityConfiguration(UserClient userClient, PasswordEncoder passwordEncoder)
     {
         this.userClient = userClient;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -43,6 +47,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception
     {
-        auth.userDetailsService(userClient);
+        auth
+                .userDetailsService(userClient)
+                .passwordEncoder(new BCryptPasswordEncoder());
     }
 }
