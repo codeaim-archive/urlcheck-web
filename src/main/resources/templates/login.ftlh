@@ -48,7 +48,17 @@
                 <div class="Login-submit">
                     <input type="submit" value="Login">
                 </div>
+                <div class="t"></div>
             </form>
+
+        </section>
+        <section class="Login-accounts">
+            <div class="title"><span>Need an account?</span></div>
+            <a href="/register"><i class="fa fa-user"></i>Register</a>
+            <div class="title"><span>Or use</span></div>
+            <a href="/login/facebook"><i class="fa fa-facebook"></i>Facebook</a>
+            <a href="/login/google"><i class="fa fa-google-plus"></i>Google</a>
+            <a href="/login/github"><i class="fa fa-github"></i>GitHub</a>
         </section>
     </div>
 </main>

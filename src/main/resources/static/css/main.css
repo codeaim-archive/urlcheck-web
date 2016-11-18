@@ -94,12 +94,19 @@
     font-size: 2.5em;
 }
 
+.Login-accounts
+{
+    max-width: 30em;
+    margin: 0 auto;
+    padding-top: 1em;
+}
+
 .Login, .Register {
     max-width: 30em;
     margin: 0 auto;
 }
 
-.Login .title, .Register .title {
+.Login .title, .Register .title, .Login-accounts .title  {
     margin: 1em 0 2em 0;
     text-align: center;
     background-color: #e0e0e0;
@@ -107,7 +114,7 @@
     font-weight: normal;
 }
 
-.Login .title span, .Register .title span {
+.Login .title span, .Register .title span, .Login-accounts .title span {
     display: inline-block;
     position: relative;
     top: -1.25em;
