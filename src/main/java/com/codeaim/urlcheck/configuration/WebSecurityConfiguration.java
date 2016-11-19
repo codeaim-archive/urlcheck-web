@@ -30,7 +30,10 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter
     {
         http
                 .authorizeRequests()
-                .antMatchers("/fonts/**")
+                .antMatchers(
+                        "/fonts/**",
+                        "/register",
+                        "/user/{username}/verify")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
