@@ -73,7 +73,7 @@ public class UserClient implements UserDetailsService
                 webConfiguration
                         .getVerifyUserEmailEndpoint()
                         .replace("{username}", username),
-                new Verification(),
+                new Verification().setUsername(username),
                 Void.class);
 
         return response.getStatusCode().equals(HttpStatus.OK);
