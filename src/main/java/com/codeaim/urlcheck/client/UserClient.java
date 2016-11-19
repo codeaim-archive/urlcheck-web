@@ -71,7 +71,7 @@ public class UserClient implements UserDetailsService
     {
         ResponseEntity<Void> response = this.restTemplate.postForEntity(
                 webConfiguration
-                        .getVerifyUserEmailEndpoint()
+                        .getVerificationEmailEndpoint()
                         .replace("{username}", username),
                 new Verification().setUsername(username),
                 Void.class);
