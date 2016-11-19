@@ -16,4 +16,6 @@ public class WebConfiguration
     private String deleteCheckEndpoint = "http://api.urlcheck.io/check/{username}/{id}";
     private String updateCheckEndpoint = "http://api.urlcheck.io/check/{username}/{id}";
     private String getUserByUsernameEndpoint = "http://api.urlcheck.io/user/{username}";
-    private String verifyUserEmailEndpoint = "http://api.urlcheck.io/user/{username}/verify";}
+    private String verifyUserEmailEndpoint = "http://api.urlcheck.io/user/{username}/verify";
+    private String verificationEmailEndpoint = "http://api.urlcheck.io/user/{username}/verification";
+}

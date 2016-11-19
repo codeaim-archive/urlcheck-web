@@ -44,7 +44,7 @@ public class UserDetails implements org.springframework.security.core.userdetail
     @Override
     public boolean isAccountNonLocked()
     {
-        return true;
+        return user.isEmailVerified();
     }
 
     @Override

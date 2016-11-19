@@ -1,3 +1,4 @@
+<#import "spring.ftl" as spring />
 <html class="no-js" lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
@@ -32,9 +33,19 @@
                         Invalid username or password
                     </div>
                 </#if>
+                <#if RequestParameters.locked??>
+                    <div class="Login-message Login-error">
+                        Please verify your account, <a href="/user/${RequestParameters.locked}/verification">click here</a> to resend the verification email
+                    </div>
+                </#if>
                 <#if RequestParameters.logout??>
                     <div class="Login-message Login-success">
                         You have been logged out
+                    </div>
+                </#if>
+                <#if RequestParameters.emailSent??>
+                    <div class="Login-message Login-success">
+                        Verification email sent, please check your inbox
                     </div>
                 </#if>
                 <#if RequestParameters.verified??>

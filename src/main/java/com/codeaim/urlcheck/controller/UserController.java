@@ -34,4 +34,12 @@ public class UserController
                 "/login?verified" :
                 "/login";
     }
+
+    @RequestMapping(value = "/{username:.+}/verification", method = RequestMethod.GET)
+    public String verificationEmail(@PathVariable String username)
+    {
+        return userClient.verificationEmail(username) ?
+                "/login?emailSent" :
+                "/login";
+    }
 }
