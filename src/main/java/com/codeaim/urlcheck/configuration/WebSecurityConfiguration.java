@@ -55,12 +55,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter
                 .permitAll()
                 .and()
                 .logout()
-                .permitAll()
-                .and()
-                .antMatcher("/login**")
-                .headers()
-                .frameOptions()
-                .disable();
+                .permitAll();
     }
 
     @Autowired
