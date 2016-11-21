@@ -14,7 +14,7 @@
 <header class="Site-header">
     <div class="Header">
         <div class="Header-title">
-            <i class="icon-urlcheck"></i><span> urlcheck.</span><span class="Header-color">io</span>
+            <a href="/"><i class="icon-urlcheck"></i><span> urlcheck.</span><span class="Header-color">io</span></a>
         </div>
     <#--<div class="Header-action">-->
     <#--<p>signed in as <a href="#">GDownes</a> <i class="fa fa-user"></i> | <i class="fa fa-sign-out"></i> <a-->
@@ -43,6 +43,11 @@
                         You have been logged out
                     </div>
                 </#if>
+                <#if RequestParameters.registered??>
+                    <div class="Login-message Login-success">
+                        Account registered. Verify your email to login, please check your inbox
+                    </div>
+                </#if>
                 <#if RequestParameters.emailSent??>
                     <div class="Login-message Login-success">
                         Verification email sent, please check your inbox
@@ -61,20 +66,18 @@
                     <label>Password</label>
                     <input type="password" name="password" title="Password" placeholder="password"/>
                 </div>
-                <div class="Login-submit">
-                    <input type="submit" value="Login">
-                </div>
-                <div class="t"></div>
+                <button type="submit" class="Login-submit">
+                    <i class="fa fa-sign-in"></i>Login
+                </button>
             </form>
-
         </section>
         <section class="Login-accounts">
             <div class="title"><span>Need an account?</span></div>
             <a href="/register"><i class="fa fa-user"></i>Register</a>
-            <div class="title"><span>Or use</span></div>
-            <a href="/login/facebook"><i class="fa fa-facebook"></i>Facebook</a>
-            <a href="/login/google"><i class="fa fa-google-plus"></i>Google</a>
-            <a href="/login/github"><i class="fa fa-github"></i>GitHub</a>
+            <#--<div class="title"><span>Or use</span></div>-->
+            <#--<a href="/login/facebook"><i class="fa fa-facebook"></i>Facebook</a>-->
+            <#--<a href="/login/google"><i class="fa fa-google-plus"></i>Google</a>-->
+            <#--<a href="/login/github"><i class="fa fa-github"></i>GitHub</a>-->
         </section>
     </div>
 </main>

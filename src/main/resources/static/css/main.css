@@ -50,6 +50,14 @@
     color: #5c4;
 }
 
+.Header .Header-title a {
+    color: #666;
+}
+
+.Header .Header-title a:hover {
+    border-bottom: 2px solid transparent;
+}
+
 .Header a {
     color: #e43;
     text-decoration: none;
@@ -103,15 +111,19 @@
 
 .Login, .Register {
     max-width: 30em;
-    margin: 0 auto;
+    margin: -2em auto 0 auto;
 }
 
 .Login .title, .Register .title, .Login-accounts .title  {
-    margin: 1em 0 2em 0;
+    margin: 0 0 1.5em 0;
     text-align: center;
     background-color: #e0e0e0;
     height: 2px;
     font-weight: normal;
+}
+
+.Login-accounts .title {
+    margin: 0.5em 0 2em 0;
 }
 
 .Login .title span, .Register .title span, .Login-accounts .title span {
@@ -129,7 +141,7 @@
 .Login label, .Register label {
     display: block;
     text-transform: uppercase;
-    padding-bottom: 0.5em;
+    padding-bottom: 0.25em;
     font-size: 0.75em;
 }
 
@@ -142,7 +154,7 @@
     color: #b0b0b0;
 }
 
-.Login-message {
+.Login-message, .Register-message {
     font-size: 0.8em;
     text-align: center;
     flex: 1;
@@ -154,28 +166,41 @@
     background-color: #DBF0D8;
 }
 
-.Login-error {
+.Login-error, .Register-error {
     background-color: #FBD1CC;
 }
 
 .Login-submit, .Register-submit {
-    margin-top: 2em;
-}
-
-.Login-submit input, .Register-submit input {
+    width: 100%;
     border: 0;
-    outline: none;
+    padding: 0.5em;
     background-color: #5c4;
-    cursor: pointer;
-    color: #ffffff;
+    color: #fff;
+    margin: 0.5em 0 0 0;
 }
 
-.Login-submit input:hover, .Register-submit input:hover {
+.Login-submit:hover, .Register-host:hover, .Login-accounts a:hover, .Register-accounts a:hover {
     background-color: #4db23e;
+    cursor: pointer;
 }
 
-.Login-email, .Login-password, .Register-email, .Register-password, .Register-confirm-password {
-    padding-bottom: 1em;
+.Login-submit i, .Register-submit i, .Login-accounts a i , .Register-accounts a i {
+    padding-right: 1em;
+}
+
+.Login-accounts a, .Register-accounts a {
+    width: 100%;
+    padding: 0.5em;
+    background-color: #5c4;
+    color: #fff;
+    margin: 0.5em 0 0 0;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.Login-email, .Login-password, .Register-username, .Register-email, .Register-password, .Register-confirm-password {
+    padding-bottom: 0.5em;
 }
 
 .Container {

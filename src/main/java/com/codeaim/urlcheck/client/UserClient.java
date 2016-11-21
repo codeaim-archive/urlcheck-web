@@ -1,6 +1,7 @@
 package com.codeaim.urlcheck.client;
 
 import com.codeaim.urlcheck.configuration.WebConfiguration;
+import com.codeaim.urlcheck.model.Register;
 import com.codeaim.urlcheck.model.User;
 import com.codeaim.urlcheck.model.Verification;
 import com.codeaim.urlcheck.model.Verify;
@@ -41,7 +42,8 @@ public class UserClient implements UserDetailsService
                             new URI(webConfiguration
                                     .getGetUserByUsernameEndpoint()
                                     .replace("{username}", username)),
-                            User.class);
+                            User.class
+                    );
 
             return new com.codeaim.urlcheck.model.UserDetails(response.getBody());
         } catch (Exception e)
@@ -60,7 +62,8 @@ public class UserClient implements UserDetailsService
                         .getVerifyUserEmailEndpoint()
                         .replace("{username}", username),
                 new Verify().setEmailVerificationToken(emailVerificationToken),
-                Void.class);
+                Void.class
+        );
 
         return response.getStatusCode().equals(HttpStatus.OK);
     }
@@ -74,8 +77,21 @@ public class UserClient implements UserDetailsService
                         .getVerificationEmailEndpoint()
                         .replace("{username}", username),
                 new Verification().setUsername(username),
-                Void.class);
+                Void.class
+        );
 
         return response.getStatusCode().equals(HttpStatus.OK);
+    }
+
+    public boolean registerUser(Register register)
+    {
+        return this.restTemplate
+                .postForEntity(webConfiguration.getCreateUserEndpoint(),
+                        new User()
+                                .setUsername(register.getUsername())
+                                .setEmail(register.getEmail())
+                                .setPassword(register.getPassword()), User.class)
+                .getStatusCode()
+                .is2xxSuccessful();
     }
 }

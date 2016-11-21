@@ -13,7 +13,7 @@
 <header class="Site-header">
     <div class="Header">
         <div class="Header-title">
-            <i class="icon-urlcheck"></i><span> urlcheck.</span><span class="Header-color">io</span>
+            <a href="/"><i class="icon-urlcheck"></i><span> urlcheck.</span><span class="Header-color">io</span></a>
         </div>
         <div class="Header-action">
             <p>signed in as <a href="#">${username}</a> <i class="fa fa-user"></i> | <i class="fa fa-sign-out"></i>

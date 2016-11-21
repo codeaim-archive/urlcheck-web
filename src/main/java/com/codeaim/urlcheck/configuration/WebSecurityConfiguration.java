@@ -43,7 +43,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter
                         "/register",
                         "/user/{username}/verify",
                         "/user/{username}/verification",
-                        "/login**")
+                        "/login**",
+                        "/register**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()

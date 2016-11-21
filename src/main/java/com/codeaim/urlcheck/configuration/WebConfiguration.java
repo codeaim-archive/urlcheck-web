@@ -18,4 +18,5 @@ public class WebConfiguration
     private String getUserByUsernameEndpoint = "http://api.urlcheck.io/user/{username}";
     private String verifyUserEmailEndpoint = "http://api.urlcheck.io/user/{username}/verify";
     private String verificationEmailEndpoint = "http://api.urlcheck.io/user/{username}/verification";
+    private String createUserEndpoint = "http://api.urlcheck.io/user";
 }
